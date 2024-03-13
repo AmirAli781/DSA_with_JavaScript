@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Max Char Occur in Str!</title>
+    <script>
+        let str = "hello Amir Ali";
+        let strObj = {};
+        let maxkey = '';
+
+        for (let i = 0; i < str.length; i++) {
+            let key = str[i];
+            if (!strObj[key]) {
+                strObj[key] = 0;
+            }
+            strObj[key]++;
+            if (maxkey == '' || strObj[key] > strObj[maxkey]) {
+                maxkey = key;
+            }
+        }
+
+        console.warn(strObj);
+        console.warn(maxkey);
+    </script>
+</head>
+
+<body>
+    <h2>Max Char Occur in Str!</h2>
+</body>
+
+</html>

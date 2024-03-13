@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Data Structure!</title>
+    <script>
+        let data={
+            name:"Maaz Gujjar",
+            age:20,
+            mail:"maaz@test.com",
+            getName:function(){
+                return this.name;
+            }
+        }
+        data.contact=123456;
+
+        //update in object;
+        // data.name="Amir Ali";
+
+        //delete in object;
+        // delete data.name;
+
+        //loop in object;
+        for(x in data)
+        {
+            // console.warn(data[x]);
+        }
+
+
+        //get values of object
+        console.warn(Object.values(data));
+
+        
+
+        // console.warn(data);
+    </script>
+</head>
+
+<body>
+    <h1>Object Data Structure!</h1>
+</body>
+
+</html>

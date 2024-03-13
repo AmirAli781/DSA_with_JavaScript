@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Sorting</title>
+    <script>
+        let data = [40, 30, 12, 36];
+        for (let i = 0; i < data.length; i++) {
+            for (let j = 0; j < data.length; j++) {
+                if(data[j]>data[j+1])
+                {
+                    let temp=data[j];
+                    data[j]=data[j+1];
+                    data[j+1]=temp;
+                }
+            }
+        } console.warn(data);
+    </script>
+</head>
+
+<body>
+    <h1>Sort Array Using Bubble Sort!</h1>
+    <p>Worst-case time complexity O(n^2)</p>
+    <p>Best-case time complexity O(n)</p>
+</body>
+
+</html>

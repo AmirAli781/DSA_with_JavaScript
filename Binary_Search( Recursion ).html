@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Search ( Recursive Approach )!</title>
+    <script>
+        let data = [5, 9, 13, 17, 25, 36, 78, 99];
+        let find = 36;
+        let index = undefined;
+        let start = 0;
+        let end = data.length - 1;
+
+        function recursiveBinary(data, start, end) {
+            mid = Math.floor((start + end) / 2);
+            if (data[mid] == find) {
+                index = mid;
+                return true;
+            } else if (data[mid] < find) {
+                recursiveBinary(data, mid + 1, end);
+            } else {
+                recursiveBinary(data, start, mid - 1);
+            }
+        }
+        recursiveBinary(data, start, end);
+        console.warn(index);
+    </script>
+</head>
+
+<body>
+    <h1>Binary Search with Recursive Approach!</h1>
+</body>
+
+</html>

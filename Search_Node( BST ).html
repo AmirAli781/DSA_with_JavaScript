@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Node in BST!</title>
+    <script>
+        class Node{
+            constructor(val){
+                this.value=val;
+                this.left=null;
+                this.right=null;
+            }
+        }
+
+        class BSTree{
+            constructor()
+            {
+                this.root=null;
+            }
+
+            isTreeEmpty()
+            {
+                return this.root===null;
+            }
+
+            makeTree(val){
+                let newNode=new Node(val);
+                if(this.root===null)
+                {
+                    this.root=newNode;
+                }else{
+                    this.insertNode(this.root,newNode);
+                }
+            }
+
+            insertNode(root,newNode){
+                if(root.value>newNode.value)
+                {
+                    if(root.left===null){
+                    root.left=newNod;
+                    }else
+                    {
+                        this.insertNode(root.left,newNode);
+                    }
+                }else{
+                    if(root.right===null){
+                    root.right=newNode;
+                    }else
+                    {
+                        this.insertNode(root.right,newNode);
+                    }
+                }
+            }
+            
+            search(root,val)
+            {
+                if(root===null)
+                {
+                    return false;
+                }else if(root.value===val)
+                {
+                    return true;
+                }else if(root.value>val)
+                {
+                    return this.search(root.left,val)
+                }else{
+                    return this.search(root.right,val)
+                }
+            }
+
+            preOrder(root)
+            {
+                if(root)
+                {
+                    console.warn(root.value);
+                    this.preOrder(root.left);
+                    this.preOrder(root.right);
+                }
+            }
+            inOrder(root)
+            {
+                if(root)
+                {
+                    this.preOrder(root.left);
+                    console.warn(root.value);
+                    this.preOrder(root.right);
+                }
+            }
+            postOrder(root)
+            {
+                if(root)
+                {
+                    this.postOrder(root.left);
+                    this.postOrder(root.right);
+                    console.warn(root.value);
+                }
+            }
+
+            bfsTraversing()
+            {
+                let queue=[];
+                queue.shift(this.root);
+                while(queue.length)
+                {
+                    let current=queue.shift();
+                    if(current.left)
+                    {
+                        queue.push(current.left)
+                    }if(current.right)
+                    {
+                        queue.push(current.right);
+                    }
+                    console.warn(current.value);
+                }
+            }
+
+            
+        }
+
+        let bst=new BSTree();
+
+        bst.makeTree(10);
+        bst.makeTree(20);
+        bst.makeTree(40);
+        bst.makeTree(50);
+        bst.makeTree(60);
+        bst.makeTree(70);
+        // console.warn(bst);
+
+        // bst.preOrder(bst.root);
+        // bst.inOrder(bst.root);
+        // bst.postOrder(bst.root);
+        bst.bfsTraversing()
+
+        console.warn(bst.bfsTraversing());
+        
+        // console.warn(bst.search(bst.root,40));
+        
+        // console.warn(bst.isTreeEmpty());
+    </script>
+</head>
+
+<body>
+    <h1>Search Node in BST!</h1>
+</body>
+
+</html>

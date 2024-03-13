@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Strings are Anagram!</title>
+    <script>
+        function checkAnagram(str1,str2)
+        {
+            let Objstr1={};
+
+            if(str1.length!==str2.length)
+            {
+                return false;
+            }
+
+            for(ch of str1){
+                // console.warn(str1[ch]);
+                Objstr1[ch]= (Objstr1[ch] || 0)+1;
+            }
+
+            for(ch of str2)
+            {
+                if(!Objstr1[ch])
+                {
+                    return false;
+                }
+                Objstr1[ch]--;
+            }
+            return true;
+        }
+        
+        console.warn(checkAnagram("hello","olleh"));
+    </script>
+</head>
+
+<body>
+    <h1>Anagram!</h1>
+    <h2>Anargram means two strings contains same characters , only order of characters can be different.</h2>
+</body>
+
+</html>

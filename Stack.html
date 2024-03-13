@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack in JavaScript</title>
+    <script>
+        let data=[];
+        let currentsize=data.length;
+        let max=5;
+        function push(){
+            let val= document.getElementById('value').value;
+            if(currentsize>=max){
+                alert('Stack is Full , cant add '+val);
+            }else{
+                data[currentsize]=val;
+                currentsize+=1;
+                document.getElementById('value').value="";
+                console.warn('Element Added!');
+            }
+
+        }
+
+        function pop(){
+            if(currentsize>0){
+                currentsize-=1;
+                data.length=currentsize;
+            }else{
+                alert('Stack is Empty');
+                console.warn(data);
+            }
+
+        }
+
+        function display(){
+            for(let i=0; i<=data.length-1; i++){
+                console.warn(data[i]);
+            }
+            if(currentsize==0){
+                console.warn(data);
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <h1>Stack in JavaScript!</h1>
+    <input type="text" placeholder="Enter value" id="value">
+    <button onclick="push()">Push</button>
+    <button onclick="pop()">Pop</button>
+    <button onclick="display()">Display</button>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Array using Stack!</title>
+    <script>
+        let data=[];
+        let currentsize=data.length;
+        function push(newVal)
+        {
+            
+            data[currentsize]=newVal;
+            currentsize+=1;
+        }
+
+        function pop(){
+            lastItem=data[currentsize-1];
+            currentsize-=1;
+            data.length=currentsize;
+            return lastItem;
+        }
+
+        function reverseStr(item){
+            for(let i=0; i<item.length; i++){
+                push(item[i]);
+            }
+            for(let i=0; i<item.length; i++){
+                item[i]=pop();
+            }
+        }
+
+        let str='Amir';
+        str=str.split("");
+        reverseStr(str);
+        console.warn(str);
+        console.warn(str.join());
+        // console.warn(data);
+    </script>
+</head>
+<body>
+    <h1>Reverse Array using Stack!</h1>
+</body>
+</html>

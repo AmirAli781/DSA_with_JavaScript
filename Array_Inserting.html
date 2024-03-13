@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Inserting</title>
+    <script>
+        let data = [60, 30, 10, 67, 40];
+        let newele = 100;
+        let position = 3;
+        console.warn(data)
+
+        for(let i=data.length-1; i>=0; i--)
+        {
+            if(i>=position)
+            {
+                data[i+1]=data[i];
+                if(i==position)
+                {
+                    data[i]=newele;
+                }
+            }
+        }
+        console.warn(data);
+
+        function insert() {
+            let data = [60, 30, 10, 67, 40];
+            let newele = document.getElementById('newele').value;
+            newele = parseInt(newele);
+            let position = document.getElementById('position').value;
+            console.warn(data)
+
+            for (let i = data.length - 1; i >= 0; i--) {
+                if (i >= position) {
+                    data[i + 1] = data[i];
+                    if (i == position) {
+                        data[i] = newele;
+                    }
+                }
+            }
+            console.warn(data);
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" placeholder="Enter New Element" id="newele">
+    <input type="text" placeholder="Enter Position" id="position">
+    <button onclick="insert()">Insert</button>
+</body>
+
+</html>
